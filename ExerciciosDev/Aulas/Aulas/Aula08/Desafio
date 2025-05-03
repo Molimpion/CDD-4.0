@@ -1,73 +1,65 @@
-alavra = list("DESAFIO")
+palavra = list("desafio")
 descobertas = ["_" for _ in palavra]
 erros = 0
 maxerros = 6
 erradas = []
 forca = [
   """
-   ----------
-   |        |
-   |        
-   |       
-   |       
-  _|__ 
+   --------
+   |      
+   |      
+   |      
+   |      
+  _|_
   """,
   """
-   ----------
-   |        |
-   |        O
-   |       
-   |       
-  _|__
+   --------
+   |      |
+   |      
+   |      
+   |      
+  _|_
   """,
   """
-   ----------
-   |        |
-   |        O
-   |        |
-   |       
-  _|__
+   --------
+   |      |
+   |      O
+   |      
+   |      
+  _|_
   """,
   """
-   ----------
-   |        |
-   |        O
-   |        |\
-   |       
-  _|__
+   --------
+   |      |
+   |      O
+   |      |
+   |      
+  _|_
   """,
-    """
-   ----------
-   |        |
-   |        O
-   |       /|\
-   |       
-  _|__
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |      
+  _|_
   """,
-   """
-   ----------
-   |        |
-   |        O
-   |       /|\
-   |       
-  _|__
-   """,
-   """
-   ----------
-   |        |
-   |        O
-   |       /|\
-   |       / 
-  _|__
-   """,
-   """
-   ----------
-   |        |
-   |        O
-   |       /|\
-   |       / \
-  _|__, 
-   """
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |     / 
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |     / \\
+  _|_
+  """
 ]
 
 while erros < maxerros and "_" in descobertas:
@@ -81,9 +73,9 @@ while erros < maxerros and "_" in descobertas:
       print("Você já tentou essa letra.")
   else:
       acerto = False
-      for i in range(len(palavra)):
-          if palavra[i] == letra:
-              descobertas[i] = letra
+      for x in range(len(palavra)):
+          if palavra[x] == letra:
+              descobertas[x] = letra
               acerto = True
       if not acerto:
           erros += 1
