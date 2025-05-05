@@ -69,7 +69,9 @@ while erros < maxerros and "_" in descobertas:
 
   letra = input("Digite uma letra: ").lower()
 
-  if letra in descobertas or letra in erradas:
+  if letra in descobertas:
+      print("Você já tentou essa letra.")
+  if letra in erradas:
       print("Você já tentou essa letra.")
   else:
       acerto = False
