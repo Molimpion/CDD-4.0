@@ -1,0 +1,90 @@
+palavra = list("desafio")
+descobertas = ["_" for _ in palavra]
+erros = 0
+maxerros = 6
+erradas = []
+forca = [
+  """
+   --------
+   |      
+   |      
+   |      
+   |      
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      
+   |      
+   |      
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |      
+   |      
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |      |
+   |      
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |      
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |     / 
+  _|_
+  """,
+  """
+   --------
+   |      |
+   |      O
+   |     /|\\
+   |     / \\
+  _|_
+  """
+]
+
+while erros < maxerros and "_" in descobertas:
+  print(forca[erros])
+  print("Palavra:", " ".join(descobertas))
+  print("Erradas:", " ".join(erradas))
+
+  letra = input("Digite uma letra: ").lower()
+
+  if letra in descobertas:
+      print("Você já tentou essa letra.")
+  if letra in erradas:
+      print("Você já tentou essa letra.")
+  else:
+      acerto = False
+      for x in range(len(palavra)):
+          if palavra[x] == letra:
+              descobertas[x] = letra
+              acerto = True
+      if not acerto:
+          erros += 1
+          erradas.append(letra)
+
+if "_" not in descobertas:
+  print("\nParabéns! Você ganhou! Palavra:", "".join(palavra))
+else:
+  print(forca[6])
+  print("Você perdeu! A palavra era:", "".join(palavra))
